@@ -1,3 +1,8 @@
+
+<html>
+    <a href="../run.php"><h1>Kembali</h1></a>
+</html>
+
 <?php
 // Create database connection using config file
 include_once("config.php");
@@ -12,7 +17,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM penjual ORDER BY id_p DESC");
 </head>
  
 <body>
-<a href="addp.php">Add New Member</a><br/><br/>
+<a href="add.php">Tambah Penjual</a><br/><br/>
  
     <table width='80%' border=1>
  
@@ -20,12 +25,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM penjual ORDER BY id_p DESC");
         <th>Nama</th> <th>No_HP</th> <th>Alamat</th> <th>Update</th>
     </tr>
     <?php  
-    while($user_data = mysqli_fetch_array($result)) {         
+    while($penjual_data = mysqli_fetch_array($result)) {         
         echo "<tr>";
-        echo "<td>".$user_data['nama_penjual']."</td>";
-        echo "<td>".$user_data['no_hp']."</td>";
-        echo "<td>".$user_data['alamat']."</td>";    
-        echo "<td><a href='editp.php?id=$user_data[id]'>Edit</a> | <a href='deletep.php?id=$user_data[id]'>Delete</a></td></tr>";        
+        echo "<td>".$penjual_data['nama_penjual']."</td>";
+        echo "<td>".$penjual_data['no_hp']."</td>";
+        echo "<td>".$penjual_data['alamat']."</td>";    
+        echo "<td><a href='edit.php?id_p=$penjual_data[id_p]'>Edit</a> | <a href='delete.php?id_p=$penjual_data[id_p]'>Delete</a></td></tr>";        
     }
     ?>
     </table>

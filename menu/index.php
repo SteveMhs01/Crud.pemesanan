@@ -1,3 +1,8 @@
+
+<html>
+    <a href="../run.php"><h1>Kembali</h1></a>
+</html>
+
 <?php
 // Create database connection using config file
 include_once("config.php");
